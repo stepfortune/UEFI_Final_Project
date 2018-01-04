@@ -773,16 +773,17 @@ void showMap() { //在进入每一关游戏时只会调用一次, 绘制游戏地图界面
 	int i, j;
 	for (i = 0; i < rows; i++) {
 		for (j = 0; j < cols; j++) {
-			if (MAP[i][j] == '#') {
+			char tmp = MAP[i][j];
+			if (tmp == '#') {
 				copyRectangle(0, 0, 30 * j, 30 * i, 30, 30);
 			}
-			else if (MAP[i][j] == 'X') {
+			else if (tmp == 'X') {
 				copyRectangle(61, 0, 30 * j, 30 * i, 30, 30);
 			}
-			else if (MAP[i][j] == 'O') {
+			else if (tmp == 'O' || tmp == 'Q' ) {
 				copyRectangle(91, 0, 30 * j, 30 * i, 30, 30);
 			}
-			else if (MAP[i][j] == '@') {
+			else if (tmp == '@') {
 				copyRectangle(31, 0, 30 * j, 30 * i, 30, 30);
 			}
 		}
